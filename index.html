@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background: #222;
+            color: white;
+
+
+            
+        }
+
+        header {
+            
+            background: url('https://picsum.photos/1600/900') no-repeat center center/cover;
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+            position: relative;
+    }
+
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+}
+
+        header h1, 
+        header p {
+            position: relative;
+            z-index: 1;
+        }
+        nav a.active-link {
+            color: #00ffff;
+            font-weight: bold;
+        }
+
+
+        nav {
+            background: #111;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            display: none;
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        section.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            animation: fadeUp 0.5s ease;
+        }
+        #themeToggle {
+            margin-left: 20px;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            background: #00ffff;
+            font-weight: bold;
+        }
+
+        body.light-mode {
+            background: white;
+            color: black;
+        }
+
+        body.light-mode nav {
+            background: #eee;
+        }
+
+        body.light-mode .project-card {
+            background: #f4f4f4;
+            color: black;
+        }
+
+        .projects {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        
+
+     
+
+        .project-card {
+           background: #333;
+           color: white;
+           padding: 20px;
+           width: 280px;
+           border-radius: 10px;
+           box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+           transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card button:hover {
+            background: #00cccc;
+            color: white;
+        }
+
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        /* Typing Animation */
+.typing {
+    overflow: hidden;
+    border-right: 3px solid white;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 3s steps(20, end) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 80px 15px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    section {
+        padding: 40px 20px;
+    }
+
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 90%;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="typing">SAHI</h1>
+        <p>AI Student | Java & Python Developer</p>
+    </header>
+
+    <nav>
+        <a href="#about" class="active-link">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button id="themeToggle">🌙</button>
+    </nav>
+
+    <section id="about" class="active">
+
+        <h2>About Me</h2>
+        <img src="https://i.pravatar.cc/150" width="150" style="border-radius:50%; margin-bottom:15px;">
+
+<p>Hello! I am passionate about programming and building real-world projects.</p>
+<p>I specialize in Java and Python development.</p>
+<p>Currently learning AI and Machine Learning.</p>
+<p>I enjoy solving problems and creating smart solutions.</p>
+<div style="margin-top:20px;">
+        <h3>My Skills</h3>
+        <p>✔ Java</p>
+        <p>✔ Python</p>
+        <p>✔ HTML & CSS</p>
+        <p>✔ Machine Learning</p>
+    </div>
+    <!-- Resume Button -->
+<a href="resume.pdf" download>
+    <button style="margin-top:20px; padding:10px 20px; border:none; border-radius:5px; cursor:pointer; background:#00ffff; color:#000; font-weight:bold;">
+        Download Resume
+    </button>
+</a>
+<!-- Social Media Links -->
+<div style="margin-top:15px;">
+    <h3>Connect with Me</h3>
+    <a href="https://github.com/yourusername" target="_blank">GitHub</a> |
+    <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a> |
+    <a href="https://twitter.com/yourusername" target="_blank">Twitter</a>
+</div>
+
+
+
+    </section>
+
+   <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects">
+
+            <div class="project-card">
+                <img src="https://via.placeholder.com/280x150" alt="Project Image" style="width:100%; border-radius:5px; margin-bottom:10px;">
+                <h3>🔥 Fire Detection Alarm</h3>
+                <p><strong>Technology:</strong> Arduino, Sensors</p>
+                <p>This project detects fire using temperature and smoke sensors and triggers an alarm system.</p>
+                <p><strong>Role:</strong> Hardware setup & programming</p>
+                <a href="https://github.com/yourusername/fire-detection" target="_blank">
+                <button style="margin-top:10px; padding:6px 12px; border:none; border-radius:5px; background:#00ffff; cursor:pointer;">GitHub</button></a>
+                <a href="https://your-live-demo-link.com" target="_blank">
+                <button style="margin-top:10px; padding:6px 12px; border:none; border-radius:5px; background:#00ffff; cursor:pointer;">Live Demo</button></a>
+
+            </div>
+
+            <div class="project-card">
+                <img src="https://via.placeholder.com/280x150" alt="Project Image" style="width:100%; border-radius:5px; margin-bottom:10px;">
+                <h3>🧠 Skin Disease Prediction</h3>
+                <p><strong>Technology:</strong> Python, Machine Learning</p>
+                <p>Built a machine learning model to predict skin diseases based on image inputs.</p>
+                <p><strong>Role:</strong> Model training & testing</p>
+                <a href="https://github.com/yourusername/fire-detection" target="_blank">
+                <button style="margin-top:10px; padding:6px 12px; border:none; border-radius:5px; background:#00ffff; cursor:pointer;">GitHub</button></a>
+                <a href="https://your-live-demo-link.com" target="_blank">
+                <button style="margin-top:10px; padding:6px 12px; border:none; border-radius:5px; background:#00ffff; cursor:pointer;">Live Demo</button></a>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+          <p><strong>Name:</strong> Sahi</p>
+    <p><strong>Email:</strong> yourname@email.com</p>
+    <p><strong>Phone:</strong> +91 1234567890</p>
+</form>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Your Name | All Rights Reserved</p>
+    </footer>
+<script>
+    const links = document.querySelectorAll("nav a");
+    const sections = document.querySelectorAll("section");
+
+    links.forEach(link => {
+        link.addEventListener("click", function(e) {
+            e.preventDefault();
+
+            const target = this.getAttribute("href").replace("#", "");
+
+            sections.forEach(section => {
+                section.classList.remove("active");
+            });
+
+            links.forEach(l => l.classList.remove("active-link"));
+
+            document.getElementById(target).classList.add("active");
+            this.classList.add("active-link");
+        });
+    });
+
+    // DARK / LIGHT MODE
+    const toggleBtn = document.getElementById("themeToggle");
+
+    toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("light-mode");
+    });
+</script>
+
+
+
+</body>
+</html>
+
